@@ -8,6 +8,6 @@ return {
 			mod_localization = "Clarity of Sound/scripts/mods/Clarity of Sound/Clarity of Sound_localization",
 		})
 	end,
-	version = "1.1.0",
+	version = "1.1.1",
 	packages = {},
 }

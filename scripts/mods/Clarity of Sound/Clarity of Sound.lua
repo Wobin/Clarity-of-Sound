@@ -2,11 +2,11 @@
 	Name: Clarity of Sound
 	Author: Wobin
 	Date: 26/06/2026
-	Version: 1.1.0
+	Version: 1.1.1
 ]]--
 
 local mod = get_mod("Clarity of Sound")
-mod.version = "1.1.0"
+mod.version = "1.1.1"
 
 local Wwise = Wwise
 local WwiseWorld = WwiseWorld
@@ -52,9 +52,7 @@ mod:hook(WwiseWorld, "trigger_resource_event", function(func, wwise_world, event
 	return func(wwise_world, event_name, ...)
 end)
 
-local PlayerUnitFxExtension = require("scripts/extension_systems/fx/player_unit_fx_extension")
-
-mod:hook(PlayerUnitFxExtension, "run_looping_sound", function(func, self, sound_alias, ...)
+mod:hook("PlayerUnitFxExtension", "run_looping_sound", function(func, self, sound_alias, ...)
 	if suppress_chordclaw and sound_alias == CHORDCLAW_ALIAS then
 		return
 	end
