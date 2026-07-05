@@ -1,12 +1,12 @@
 --[[
 	Name: Clarity of Sound
 	Author: Wobin
-	Date: 26/06/2026
-	Version: 1.1.1
+	Date: 05/07/2026
+	Version: 1.2.0
 ]]--
 
 local mod = get_mod("Clarity of Sound")
-mod.version = "1.1.1"
+mod.version = "1.2.0"
 
 local Wwise = Wwise
 local WwiseWorld = WwiseWorld
@@ -15,19 +15,22 @@ local PLAYER_ABILITY  = "player_ability"
 local SHIELD_STATE    = "cryptic_shield"
 local ACD_STATE       = "cryptic_mechanical"
 local ACD_LOOP_EVENT  = "wwise/events/player/play_ability_active_cryptic_precision_stance"
+local BLADE_LOOP_EVENT = "wwise/events/weapon/play_transonic_blades_idle_loop"
 local CHORDCLAW_ALIAS = "melee_charging"
 local SKULL_AIM_ALIAS = "ability_aiming"
 
-local suppress_shield    = true
-local suppress_acd       = true
-local suppress_chordclaw = true
-local suppress_skull_aim = true
+local suppress_shield          = true
+local suppress_acd             = true
+local suppress_transonic_blade = true
+local suppress_chordclaw       = true
+local suppress_skull_aim       = true
 
 local function refresh_settings()
-	suppress_shield    = mod:get("suppress_shield")
-	suppress_acd       = mod:get("suppress_acd")
-	suppress_chordclaw = mod:get("suppress_chordclaw")
-	suppress_skull_aim = mod:get("suppress_skull_aim")
+	suppress_shield          = mod:get("suppress_shield")
+	suppress_acd             = mod:get("suppress_acd")
+	suppress_transonic_blade = mod:get("suppress_transonic_blade")
+	suppress_chordclaw       = mod:get("suppress_chordclaw")
+	suppress_skull_aim       = mod:get("suppress_skull_aim")
 end
 
 mod:hook(Wwise, "set_state", function(func, group, state, ...)
@@ -46,6 +49,10 @@ end)
 
 mod:hook(WwiseWorld, "trigger_resource_event", function(func, wwise_world, event_name, ...)
 	if suppress_acd and event_name == ACD_LOOP_EVENT then
+		return
+	end
+
+	if suppress_transonic_blade and event_name == BLADE_LOOP_EVENT then
 		return
 	end
 

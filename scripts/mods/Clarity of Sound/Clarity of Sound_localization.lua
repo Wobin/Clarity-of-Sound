@@ -20,6 +20,13 @@ return {
 		en = "Removes the looping hum and the world-audio duck applied while Advanced Combat Doctrine is active.",
 	},
 
+	suppress_transonic_blade = {
+		en = "Transonic Blade hum",
+	},
+	suppress_transonic_blade_tooltip = {
+		en = "Removes the looping idle hum played while a Transonic Sword or Transonic Knife is wielded.",
+	},
+
 	suppress_chordclaw = {
 		en = "Chordclaw ready loop",
 	},

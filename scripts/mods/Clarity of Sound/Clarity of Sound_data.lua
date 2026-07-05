@@ -21,6 +21,13 @@ return {
 				tooltip = "suppress_acd_tooltip",
 			},
 			{
+				setting_id = "suppress_transonic_blade",
+				type = "checkbox",
+				default_value = true,
+				title = "suppress_transonic_blade",
+				tooltip = "suppress_transonic_blade_tooltip",
+			},
+			{
 				setting_id = "suppress_chordclaw",
 				type = "checkbox",
 				default_value = true,
