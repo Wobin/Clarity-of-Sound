@@ -3,7 +3,20 @@ return {
 		en = "Clarity of Sound",
 	},
 	mod_description = {
-		en = "Silences the world-audio muffle and looping noises that Skitarius (Cryptic) abilities and gear add. Each effect has its own toggle; the abilities' own functional sounds and visuals are kept.",
+		en = "Silences the world-audio muffle and looping noises that certain abilities and gear add, grouped by class. Each effect has its own toggle; the abilities' own functional sounds and visuals are kept.",
+	},
+
+	group_skitarius = {
+		en = "Skitarius",
+	},
+	group_zealot = {
+		en = "Zealot",
+	},
+	group_ogryn = {
+		en = "Ogryn",
+	},
+	group_hive_scum = {
+		en = "Hive Scum",
 	},
 
 	suppress_shield = {
@@ -39,5 +52,26 @@ return {
 	},
 	suppress_skull_aim_tooltip = {
 		en = "Removes the looping sound played while aiming the servo-skull order.",
+	},
+
+	suppress_thunder_hammer = {
+		en = "Thunder Hammer hum",
+	},
+	suppress_thunder_hammer_tooltip = {
+		en = "Removes the looping powered hum played while a Thunder Hammer's special is active (yours and other players').",
+	},
+
+	suppress_barrage = {
+		en = "Point Blank Barrage loop",
+	},
+	suppress_barrage_tooltip = {
+		en = "Removes the looping firing-frenzy sound played while the Ogryn's Point Blank Barrage is active.",
+	},
+
+	suppress_rampage = {
+		en = "Rampage roar",
+	},
+	suppress_rampage_tooltip = {
+		en = "Removes the looping roar played while the Hive Scum's Rampage (Punk Rage) ability is active.",
 	},
 }

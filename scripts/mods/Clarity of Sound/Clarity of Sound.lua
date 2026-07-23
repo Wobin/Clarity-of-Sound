@@ -1,12 +1,12 @@
 --[[
 	Name: Clarity of Sound
 	Author: Wobin
-	Date: 05/07/2026
-	Version: 1.2.0
+	Date: 06/07/2026
+	Version: 1.3.0
 ]]--
 
 local mod = get_mod("Clarity of Sound")
-mod.version = "1.2.0"
+mod.version = "1.3.0"
 
 local Wwise = Wwise
 local WwiseWorld = WwiseWorld
@@ -19,11 +19,19 @@ local BLADE_LOOP_EVENT = "wwise/events/weapon/play_transonic_blades_idle_loop"
 local CHORDCLAW_ALIAS = "melee_charging"
 local SKULL_AIM_ALIAS = "ability_aiming"
 
+local HAMMER_LOOP_EVENT      = "wwise/events/weapon/play_thunder_hammer_powered_loop"
+local HAMMER_HUSK_LOOP_EVENT = "wwise/events/weapon/husk_play_thunder_hammer_powered_loop"
+local BARRAGE_LOOP_EVENT     = "wwise/events/player/play_ability_ogryn_speshul_ammo"
+local RAMPAGE_LOOP_EVENT     = "wwise/events/player/play_player_ability_broker_rage_start"
+
 local suppress_shield          = true
 local suppress_acd             = true
 local suppress_transonic_blade = true
 local suppress_chordclaw       = true
 local suppress_skull_aim       = true
+local suppress_thunder_hammer  = true
+local suppress_barrage         = true
+local suppress_rampage         = true
 
 local function refresh_settings()
 	suppress_shield          = mod:get("suppress_shield")
@@ -31,6 +39,9 @@ local function refresh_settings()
 	suppress_transonic_blade = mod:get("suppress_transonic_blade")
 	suppress_chordclaw       = mod:get("suppress_chordclaw")
 	suppress_skull_aim       = mod:get("suppress_skull_aim")
+	suppress_thunder_hammer  = mod:get("suppress_thunder_hammer")
+	suppress_barrage         = mod:get("suppress_barrage")
+	suppress_rampage         = mod:get("suppress_rampage")
 end
 
 mod:hook(Wwise, "set_state", function(func, group, state, ...)
@@ -53,6 +64,18 @@ mod:hook(WwiseWorld, "trigger_resource_event", function(func, wwise_world, event
 	end
 
 	if suppress_transonic_blade and event_name == BLADE_LOOP_EVENT then
+		return
+	end
+
+	if suppress_thunder_hammer and (event_name == HAMMER_LOOP_EVENT or event_name == HAMMER_HUSK_LOOP_EVENT) then
+		return
+	end
+
+	if suppress_barrage and event_name == BARRAGE_LOOP_EVENT then
+		return
+	end
+
+	if suppress_rampage and event_name == RAMPAGE_LOOP_EVENT then
 		return
 	end
 
