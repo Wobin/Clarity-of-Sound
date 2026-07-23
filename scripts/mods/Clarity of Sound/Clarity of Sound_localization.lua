@@ -37,7 +37,21 @@ return {
 		en = "Transonic Blade hum",
 	},
 	suppress_transonic_blade_tooltip = {
-		en = "Removes the looping idle hum played while a Transonic Sword or Transonic Knife is wielded.",
+		en = "Removes the looping idle hum played while a Transonic Sword or Transonic Knife is wielded. Covers other players' blades too.",
+	},
+
+	suppress_arc_maul = {
+		en = "Arc Maul hum",
+	},
+	suppress_arc_maul_tooltip = {
+		en = "Removes the Arc Maul's electrical hum: both the passive hum played while it is wielded and the louder hum while its special is active. Covers other players' Arc Mauls too.",
+	},
+
+	suppress_galvanic_rifle = {
+		en = "Galvanic Rifle hum",
+	},
+	suppress_galvanic_rifle_tooltip = {
+		en = "Removes the looping cylinder idle hum played while a Galvanic Rifle is wielded. Covers other players' rifles too.",
 	},
 
 	suppress_chordclaw = {
@@ -45,6 +59,13 @@ return {
 	},
 	suppress_chordclaw_tooltip = {
 		en = "Removes the looping charge sound played while holding the Chordclaw's charged lunge ready.",
+	},
+
+	suppress_servo_skull_hum = {
+		en = "Servo-skull hover hum",
+	},
+	suppress_servo_skull_hum_tooltip = {
+		en = "Removes the continuous hover hum of the deployed servo-skull companion, for the whole time it is out. Covers other players' skulls too. Separate from the aim loop below.",
 	},
 
 	suppress_skull_aim = {
