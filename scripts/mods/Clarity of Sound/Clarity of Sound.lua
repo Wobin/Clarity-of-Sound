@@ -1,12 +1,11 @@
 --[[
 	Name: Clarity of Sound
 	Author: Wobin
-	Date: 24/07/2026
-	Version: 1.4.0
+	Date: 19/08/2026
 ]]--
 
 local mod = get_mod("Clarity of Sound")
-mod.version = "1.4.0"
+mod.version = mod.get_metadata and mod:get_metadata("version") or "unknown"
 
 local Wwise = Wwise
 local WwiseWorld = WwiseWorld
@@ -132,4 +131,9 @@ end
 
 mod.on_setting_changed = function()
 	refresh_settings()
+end
+
+
+mod.on_settings_reset = function()
+	mod.on_setting_changed()
 end

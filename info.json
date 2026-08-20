@@ -1,0 +1,17 @@
+{
+	"name": "Clarity of Sound",
+	"description": "Silences the world-audio muffle and looping noises that certain abilities and gear add, grouped by class. Each effect has its own toggle; the abilities' own functional sounds and visuals are kept.",
+	"version": "1.4.1",
+	"author": "Wobin",
+	"homepage": "https://www.nexusmods.com/warhammer40kdarktide/mods/944",
+	"source": "https://github.com/Wobin/Clarity-of-Sound",
+	"funding": {
+		"kofi": "https://ko-fi.com/wobin_dwonderdog"
+	},
+	"nexusId": "944",
+	"order": {
+		"require": [],
+		"this_after": [],
+		"this_before": []
+	}
+}
